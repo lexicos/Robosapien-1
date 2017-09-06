@@ -11,7 +11,7 @@ while True:
 	Hex_command = raw_input("Input Command or bye to exit now")
 	if Hex_command == "bye" : break
 	print "Hex command is"
-	print Int(Hex_command)
+	print int(Hex_command)
 	print int(Hex_command, 16)
 	rs.send_code(Hex_command)
 	print "Command sent"
