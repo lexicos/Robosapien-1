@@ -12,7 +12,7 @@ while True:
 	Hex_command = raw_input("Input Command or bye to exit now")
 	if Hex_command == "bye" : break
 	print int(Hex_command, 16)
-	rs.send_code(0xB1)
+	rs.send_code(Hex_command)
 	print "Command sent"
 	rs.send_code(0xB1)
 
