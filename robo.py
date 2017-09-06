@@ -36,19 +36,19 @@ class Robo(object):
 		self.pi.set_mode(pin, pigpio.OUTPUT) # IR TX connected to this GPIO.
 		self.pi.write(self.pin, 1)
 		self.pi.wave_clear()
-		
+
 		self.wf_head = self.add_wave(8, 8)
 		self.wf_hi = self.add_wave(4, 1)
 		self.wf_lo = self.add_wave(1, 1)
 		self.wf_tail = self.add_wave(8, 8)
-		
+
 		self.keep_alive = self.create_code(CODE_RSNoOp)
 
 
 	def add_wave(self, hi, lo):
 		self.pi.wave_add_generic([pigpio.pulse(1<<self.pin, 0, hi * CYCLE), pigpio.pulse(0, 1<<self.pin, lo * CYCLE)])
 		return self.pi.wave_create()
-	
+
 	def create_code(self, code):
 		data = code
 		print data
@@ -76,7 +76,7 @@ class Robo(object):
 			time.sleep(0.002)
 
 		self.pi.write(self.pin, 1)
-	
+
 	def send_code(self, code):
 		self.send_wave(self.create_code(code))
 		time.sleep(0.5)
@@ -84,4 +84,3 @@ class Robo(object):
 	def clean_up(self):
 		pi.wave_clear()
 		pi.stop() # Disconnect from Pi.
-	
