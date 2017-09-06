@@ -11,10 +11,12 @@ rs=robo.Robo(21)	#create Robo object for GPIO 21
 while True:
 	Hex_string = raw_input("Input Command or bye to exit now  ")
 	if Hex_string == "bye" : break
-	print "Hex string is", Hex_string
-	Hex_integer = int(Hex_string, 16)
-	print "Hex Integer is", Hex_string
-	rs.send_code(Hex_integer)
-	print "Command sent"
+	try:
+		Hex_integer = int(Hex_string, 16
+		rs.send_code(Hex_integer)
+		print "Command sent"
+	except :
+		print "Invalid string"
+		continue
 
 print "fin"
