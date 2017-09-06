@@ -16,6 +16,5 @@ while True:
 	print "Hex Integer is", Hex_string
 	rs.send_code(Hex_integer)
 	print "Command sent"
-	rs.send_code(0xB1)
 
 print "fin"
