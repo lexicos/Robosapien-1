@@ -5,7 +5,7 @@
 import robo
 
 rs=robo.Robo(21)	#create Robo object for GPIO 21
-rs.send_code(0xB1)	#Issue reset command
+#rs.send_code(0xB1)	#Issue reset command
 raw_input('Hit enter to get started')
 
 while True:
