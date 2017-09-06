@@ -3,6 +3,7 @@
 
 # command codes from http://www.aibohack.com/robosap/ir_codes.htm
 import robo
+Hex_integer == 0
 
 rs=robo.Robo(21)	#create Robo object for GPIO 21
 #rs.send_code(0xB1)	#Issue reset command
