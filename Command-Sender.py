@@ -8,11 +8,12 @@ rs=robo.Robo(21)	#create Robo object for GPIO 21
 #rs.send_code(0xB1)	#Issue reset command
 
 while True:
-	Hex_command = raw_input("Input Command or bye to exit now")
-	if Hex_command == "bye" : break
-	print "Hex command is", Hex_command
-	print int(Hex_command, 16)
-	rs.send_code(Hex_command)
+	Hex_string = raw_input("Input Command or bye to exit now  ")
+	if Hex_string == "bye" : break
+	print "Hex string is", Hex_string
+	Hex_integer == int(Hex_string, 16)
+	pring "Hex Integer is", Hex_string
+	rs.send_code(Hex_integer)
 	print "Command sent"
 	rs.send_code(0xB1)
 
