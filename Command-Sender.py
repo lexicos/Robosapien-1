@@ -12,7 +12,7 @@ while True:
 	if Hex_string == "bye" : break
 	print "Hex string is", Hex_string
 	Hex_integer == int(Hex_string, 16)
-	pring "Hex Integer is", Hex_string
+	print "Hex Integer is", Hex_string
 	rs.send_code(Hex_integer)
 	print "Command sent"
 	rs.send_code(0xB1)
