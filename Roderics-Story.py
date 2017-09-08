@@ -3,6 +3,7 @@
 
 # command codes from http://www.aibohack.com/robosap/ir_codes.htm
 import robo
+import time
 
 rs=robo.Robo(21)	#create Robo object for GPIO 21
 rs.send_code(0xB1)	#Issue reset command
@@ -13,6 +14,7 @@ rs.send_code(0x81)	#Right arm up
 rs.send_code(0xA6)  #FORWARD STEP
 rs.send_code(0xC6)	#BULLDOZER
 rs.send_code(0xA5)	#LEAN FORWARD
+time.sleep(5)
 rs.send_code(0xAB)	#LISTEN
 rs.send_code(0xCE) #ROAR
 
