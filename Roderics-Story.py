@@ -4,21 +4,34 @@
 # command codes from http://www.aibohack.com/robosap/ir_codes.htm
 import robo
 import time
+Hex_integer = 0
+Hex_list=[]
 
-rs=robo.Robo(21)	#create Robo object for GPIO 21
-rs.send_code(0xB1)	#Issue reset command
+#rs=robo.Robo(21)	#create Robo object for GPIO 21
 
 
-raw_input('Enter to start my story')
-rs.send_code(0x81)	#Right arm up
-rs.send_code(0xA6)  #FORWARD STEP
-rs.send_code(0xC6)	#BULLDOZER
-rs.send_code(0xA5)	#LEAN FORWARD
-time.sleep(5)
-rs.send_code(0xAB)	#LISTEN
-rs.send_code(0xCE) #ROAR
+raw_input('Enter to start programme my story')
+programme = (raw_input("Type a series of commands   "))
+string_list = programme.split(",")
+print "Ok you typed in the folliwng list"
+print string_list
+time.sleep(2)
+print "let convert that Hex to Numbers for Roderick"
 
-raw_input('Enter')
-rs.send_code(0xCE)	#Roar
+for i in string_list :
+    try:
+        Hex_integer = int(i , 16)
+        print Hex_integer
+        Hex_list.append(Hex_integer)
+    except:
+        print "Invalid input"
+        continue
+print "About to start Sending"
+time.sleep(2)
 
-print "fin"
+for i in Hex_list :
+    print "Sending", i
+    rs.send_code(i)
+    time.sleep(5)
+
+print "Finished nothing left to do"
