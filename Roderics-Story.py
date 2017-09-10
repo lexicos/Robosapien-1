@@ -7,7 +7,7 @@ import time
 Hex_integer = 0
 Hex_list=[]
 
-#rs=robo.Robo(21)	#create Robo object for GPIO 21
+rs=robo.Robo(21)	#create Robo object for GPIO 21
 
 
 raw_input('Enter to start programme my story')
