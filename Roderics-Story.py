@@ -32,6 +32,6 @@ time.sleep(2)
 for i in Hex_list :
     print "Sending", i
     rs.send_code(i)
-    time.sleep(5)
+    time.sleep(2)
 
 print "Finished nothing left to do"
